@@ -6,7 +6,7 @@ using System;
 
 public class SQLConfig
 {
-    private MySqlConnection con = new MySqlConnection("server=localhost;user id=root;password=root;database=tuts_dbcurriculumn;sslMode=none");
+    private MySqlConnection con = new MySqlConnection("server=localhost;user id=;password=;database=tuts_dbcurriculumn;sslMode=none");
     private MySqlCommand cmd;
     private MySqlDataAdapter da;
     public DataTable dt;
