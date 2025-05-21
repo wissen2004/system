@@ -53,11 +53,12 @@
             // 
             // tsAdd
             // 
+            this.tsAdd.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.tsAdd.Image = ((System.Drawing.Image)(resources.GetObject("tsAdd.Image")));
             this.tsAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsAdd.Name = "tsAdd";
-            this.tsAdd.Size = new System.Drawing.Size(166, 54);
-            this.tsAdd.Text = "Add Student Grades";
+            this.tsAdd.Size = new System.Drawing.Size(247, 54);
+            this.tsAdd.Text = "Добавить оценки студенту";
             this.tsAdd.Click += new System.EventHandler(this.tsAdd_Click);
             // 
             // btnSelect
@@ -90,7 +91,7 @@
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(75, 28);
             this.btnGo.TabIndex = 30;
-            this.btnGo.Text = "Go";
+            this.btnGo.Text = "Поиск";
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
@@ -117,12 +118,12 @@
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(19, 23);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(53, 17);
+            this.Label1.Size = new System.Drawing.Size(46, 18);
             this.Label1.TabIndex = 26;
-            this.Label1.Text = "Name :";
+            this.Label1.Text = "Имя :";
             // 
             // Label10
             // 
@@ -131,30 +132,30 @@
             this.Label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label10.Location = new System.Drawing.Point(266, 6);
             this.Label10.Name = "Label10";
-            this.Label10.Size = new System.Drawing.Size(428, 51);
+            this.Label10.Size = new System.Drawing.Size(568, 51);
             this.Label10.TabIndex = 34;
-            this.Label10.Text = "View Student Grades";
+            this.Label10.Text = "Просмотр оценок студента";
             // 
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.Location = new System.Drawing.Point(19, 53);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(68, 17);
+            this.Label2.Size = new System.Drawing.Size(58, 18);
             this.Label2.TabIndex = 24;
-            this.Label2.Text = "Address :";
+            this.Label2.Text = "Адрес :";
             // 
             // Label5
             // 
             this.Label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label5.AutoSize = true;
-            this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label5.Location = new System.Drawing.Point(574, 53);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(84, 17);
+            this.Label5.Size = new System.Drawing.Size(43, 18);
             this.Label5.TabIndex = 23;
-            this.Label5.Text = "Year Level :";
+            this.Label5.Text = "Год :";
             // 
             // lblName
             // 
@@ -170,12 +171,12 @@
             // 
             this.Label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label9.AutoSize = true;
-            this.Label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label9.Location = new System.Drawing.Point(516, 100);
             this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(135, 17);
+            this.Label9.Size = new System.Drawing.Size(118, 18);
             this.Label9.TabIndex = 33;
-            this.Label9.Text = "Search for Student :";
+            this.Label9.Text = "Поиск студента";
             // 
             // lblCourse
             // 
@@ -202,12 +203,12 @@
             // 
             this.Label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label6.AutoSize = true;
-            this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label6.Location = new System.Drawing.Point(574, 23);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(61, 17);
+            this.Label6.Size = new System.Drawing.Size(49, 18);
             this.Label6.TabIndex = 20;
-            this.Label6.Text = "Course :";
+            this.Label6.Text = "Курс :";
             // 
             // GroupBox1
             // 
@@ -227,7 +228,7 @@
             this.GroupBox1.Size = new System.Drawing.Size(965, 83);
             this.GroupBox1.TabIndex = 36;
             this.GroupBox1.TabStop = false;
-            this.GroupBox1.Text = "Student Basic Information";
+            this.GroupBox1.Text = "Основная информация о студенте";
             // 
             // txtSearch
             // 

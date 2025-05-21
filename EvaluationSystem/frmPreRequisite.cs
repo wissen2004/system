@@ -56,6 +56,11 @@ namespace EvaluationSystem
             frmPreRequisite_Load(sender, e);
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void frmPreRequisite_Load(object sender, EventArgs e)
         {
             sql = "SELECT SubjectId, `Subject` as 'CourseNo.', `DescriptiveTitle`, `LecUnit`, `LabUnit`,Course,`YearLevel`, `Semester`,   `PreRequisite` FROM `tblsubject` s,tblcourse c WHERE s.CourseId=c.CourseId";

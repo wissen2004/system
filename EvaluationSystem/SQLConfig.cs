@@ -1,434 +1,246 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EvaluationSystem;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System;
 
-
-namespace EvaluationSystem
+public class SQLConfig
 {
-    class SQLConfig
+    private MySqlConnection con = new MySqlConnection("server=localhost;user id=root;password=root;database=tuts_dbcurriculumn;sslMode=none");
+    private MySqlCommand cmd;
+    private MySqlDataAdapter da;
+    public DataTable dt;
+    int result;
+    usableFunction funct = new usableFunction();
+
+
+    public void Execute_CUD(string sql, string msg_false, string msg_true, params MySqlParameter[] parameters)
     {
-
-        private MySqlConnection con = new MySqlConnection("server=localhost;user id=;password=;database=tuts_dbcurriculumn;sslMode=none");
-        private MySqlCommand cmd;
-        private MySqlDataAdapter da;
-        public DataTable dt; 
-        int result;
-        usableFunction funct = new usableFunction(); 
-        public void Execute_CUD(string sql, string msg_false, string msg_true)
+        try
         {
-            try
+            con.Open();
+            cmd = new MySqlCommand(sql, con);
+            cmd.Parameters.AddRange(parameters);
+            result = cmd.ExecuteNonQuery();
+            MessageBox.Show(result > 0 ? msg_true : msg_false);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+        finally
+        {
+            con.Close();
+        }
+    }
+
+    public void Execute_Query(string sql, params MySqlParameter[] parameters)
+    {
+        try
+        {
+            con.Open();
+            cmd = new MySqlCommand(sql, con);
+            cmd.Parameters.AddRange(parameters);
+            cmd.ExecuteNonQuery();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+        finally
+        {
+            con.Close();
+        }
+    }
+    public DataTable Load_Data(string sql, params MySqlParameter[] parameters)
+    {
+        DataTable dataTable = new DataTable();
+        try
+        {
+            if (con.State != ConnectionState.Open)
             {
                 con.Open();
-                cmd = new MySqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                result = cmd.ExecuteNonQuery();
-
-                if(result > 0)
-                {
-                    MessageBox.Show(msg_true);
-                }
-                else
-                {
-                    MessageBox.Show(msg_false);
-                } 
-
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close(); 
-            }
+            cmd = new MySqlCommand(sql, con);
+            cmd.Parameters.AddRange(parameters);
+            da = new MySqlDataAdapter(cmd);
+            da.Fill(dataTable);
         }
-        public void Execute_Query(string sql)
+        catch (Exception ex)
         {
-            try
+            MessageBox.Show($"Error loading data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            dataTable = null;
+        }
+        finally
+        {
+            da?.Dispose();
+            con.Close();
+        }
+        return dataTable;
+    }
+
+    public void Load_DTG(string sql, DataGridView dtg, params MySqlParameter[] parameters)
+    {
+        try
+        {
+            if (con.State != ConnectionState.Open)
             {
                 con.Open();
-                cmd = new MySqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                result = cmd.ExecuteNonQuery();
-                 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
+            cmd = new MySqlCommand(sql, con);
+            cmd.Parameters.AddRange(parameters);
+            da = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
+            dtg.DataSource = dt;
+            funct.ResponsiveDtg(dtg);
+            dtg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtg.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
-        public void Load_DTG(string sql,DataGridView dtg)
+        catch (Exception ex)
         {
-            try
-            {
-                //con.Open();
-                if (con.State != ConnectionState.Open)
-                {
-                    con.Open();
-                }
-                cmd = new MySqlCommand();
-                da = new MySqlDataAdapter();
-                dt = new DataTable();
-
-
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-                dtg.DataSource = dt;
-
-               
-                funct.ResponsiveDtg(dtg);
-                dtg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dtg.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-
-                
-                
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                da.Dispose();
-                con.Close();
-            }
-
+            MessageBox.Show(ex.Message);
         }
-
-        public void Load_ResultList(string sql, DataGridView dtg)
+        finally
         {
-            try
-            {
-                //con.Open();
-                if (con.State != ConnectionState.Open)
-                {
-                    con.Open();
-                }
-                cmd = new MySqlCommand();
-                da = new MySqlDataAdapter();
-                dt = new DataTable();
-
-
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-                dtg.DataSource = dt;
-
-
-                funct.ResponsiveDtg(dtg);
-                dtg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                dtg.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                da.Dispose();
-                con.Close();
-            }
-
+            da?.Dispose();
+            con.Close();
         }
-        public void fiil_CBO(string sql, ComboBox cbo)
+    }
+
+    public int maxrow(string sql, params MySqlParameter[] parameters)
+    {
+        int maxrow = 0;
+        try
         {
-            try
-            {
-                if (con.State != ConnectionState.Open)
-                {
-                    con.Open(); 
-                } 
-
-                cmd = new MySqlCommand();
-                da = new MySqlDataAdapter();
-                dt = new DataTable();
-
-
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-
-                cbo.DataSource = dt;
-                cbo.ValueMember = dt.Columns[0].ColumnName;
-                cbo.DisplayMember = dt.Columns[1].ColumnName;
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-                da.Dispose();
-            }
-
-        }
-        public void combo(string sql, ComboBox cbo)
-        {
-            try
-            {
-                if (con.State != ConnectionState.Open)
-                {
-                    con.Open();
-                }
-
-                cmd = new MySqlCommand();
-                da = new MySqlDataAdapter();
-                dt = new DataTable();
-
-
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-
-                cbo.Items.Clear();
-                cbo.Text = "Select";
-                foreach(DataRow r in dt.Rows)
-                {
-                    cbo.Items.Add(r.Field<string>(0));
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-                da.Dispose();
-            }
-
-        }
-        public void singleResult(string sql)
-
-        {
-            try
+            if (con.State != ConnectionState.Open)
             {
                 con.Open();
-                //if (con.State == ConnectionState.Open)
-                //{
-                //    con.Close();
-                //}
-                //else
-                //{
-                //    con.Open(); 
-                //}
-                cmd = new MySqlCommand();
-                da = new MySqlDataAdapter();
-                dt = new DataTable();
-
-
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                da.SelectCommand = cmd;
-                da.Fill(dt);  
-
-
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                da.Dispose();
-                con.Close();
-            }
+            cmd = new MySqlCommand(sql, con);
+            cmd.Parameters.AddRange(parameters);
+            da = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
+            maxrow = dt.Rows.Count;
         }
-        public int maxrow(string sql)
-
+        catch (Exception ex)
         {
-            int maxrow = 0;
-            try
-            {
-                con.Open(); 
-                cmd = new MySqlCommand();
-                da = new MySqlDataAdapter();
-                dt = new DataTable();
-
-
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-
-                maxrow = dt.Rows.Count;
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                da.Dispose();
-                con.Close();
-            }
-            return maxrow;
+            MessageBox.Show(ex.Message);
         }
-        public void loadReports(string sql)
-
+        finally
         {
-            try
+            da?.Dispose();
+            con.Close();
+        }
+        return maxrow;
+    }
+
+   public void loadReports(string sql, params MySqlParameter[] parameters)
+    {
+        try
+        {
+            if (con.State != ConnectionState.Open)
             {
                 con.Open();
-                cmd = new MySqlCommand();
-                da = new MySqlDataAdapter();
-                dt = new DataTable();
-
-
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-                da.Dispose();
-            }
+            cmd = new MySqlCommand(sql, con);
+            cmd.Parameters.AddRange(parameters);
+            da = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
         }
-
-        public void autocomplete(string sql,TextBox txt)
+        catch (Exception ex)
         {
-            try
+            MessageBox.Show($"Error loading report data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        finally
+        {
+            con.Close();
+            da?.Dispose();
+        }
+    }
+
+    public void autocomplete(string sql, TextBox txt)
+    {
+        try
+        {
+            if (con.State != ConnectionState.Open)
             {
                 con.Open();
-                cmd = new MySqlCommand();
-                da = new MySqlDataAdapter();
-                dt = new DataTable();
-
-
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-
-                txt.AutoCompleteCustomSource.Clear();
-                txt.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                txt.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-                foreach (DataRow r in dt.Rows)
-                {
-                    txt.AutoCompleteCustomSource.Add(r.Field<string>(0));
-                }
-
-
             }
-            catch (Exception ex)
+            cmd = new MySqlCommand(sql, con);
+            da = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
+            txt.AutoCompleteCustomSource.Clear();
+            txt.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txt.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            foreach (DataRow r in dt.Rows)
             {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-                da.Dispose();
+                txt.AutoCompleteCustomSource.Add(r.Field<string>(0));
             }
         }
-
-        public void autonumber(string AUTOKEY, TextBox txt)
+        catch (Exception ex)
         {
-            try
-            {
-
-                if (con.State != ConnectionState.Open)
-                {
-                    con.Open(); 
-                }
-                cmd = new MySqlCommand();
-                da = new MySqlDataAdapter();
-                dt = new DataTable();
-
-
-                cmd.Connection = con;
-                cmd.CommandText = "SELECT concat(`STRT`, `END`) FROM `tblautonumber` WHERE `DESCRIPTION`='" + AUTOKEY + "'";
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-
-                txt.Text = DateTime.Now.ToString("yyyy") + dt.Rows[0].Field<string>(0);
-            
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-                da.Dispose();
-            }
+            MessageBox.Show(ex.Message);
         }
-
-        public void trans_autonumber(string AUTOKEY, Label txt)
+        finally
         {
-            try
-            {
-
-                if (con.State != ConnectionState.Open)
-                {
-                    con.Open();
-                }
-                cmd = new MySqlCommand();
-                da = new MySqlDataAdapter();
-                dt = new DataTable();
-
-
-                cmd.Connection = con;
-                cmd.CommandText = "SELECT concat(`STRT`, `END`) FROM `tblautonumber` WHERE `DESCRIPTION`='" + AUTOKEY + "'";
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-
-                txt.Text = DateTime.Now.ToString("yyyy") + dt.Rows[0].Field<string>(0);
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-                da.Dispose();
-            }
+            con.Close();
+            da?.Dispose();
         }
-        public void update_Autonumber(string id)
-        { 
-            Execute_Query("UPDATE `tblautonumber` SET `END`=`END`+`INCREMENT` WHERE `DESCRIPTION`='" + id + "'");
-        }
+    }
 
-      
+    public void fiil_CBO(string sql, ComboBox cbo)
+    {
+        try
+        {
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+            }
+            cmd = new MySqlCommand(sql, con);
+            da = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
+            cbo.DataSource = dt;
+            cbo.ValueMember = dt.Columns[0].ColumnName;
+            cbo.DisplayMember = dt.Columns[1].ColumnName;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+        finally
+        {
+            con.Close();
+            da?.Dispose();
+        }
+    }
+
+    public void singleResult(string sql, params MySqlParameter[] parameters)
+    {
+        try
+        {
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+            }
+            cmd = new MySqlCommand(sql, con);
+            cmd.Parameters.AddRange(parameters);
+            da = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+        finally
+        {
+            con.Close();
+            da?.Dispose();
+        }
     }
 }

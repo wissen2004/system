@@ -58,14 +58,14 @@
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Location = new System.Drawing.Point(74, 19);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(427, 20);
+            this.txtSearch.Size = new System.Drawing.Size(427, 24);
             this.txtSearch.TabIndex = 64;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // txtdesc
             // 
             this.txtdesc.Enabled = false;
-            this.txtdesc.Location = new System.Drawing.Point(104, 58);
+            this.txtdesc.Location = new System.Drawing.Point(160, 58);
             this.txtdesc.Name = "txtdesc";
             this.txtdesc.Size = new System.Drawing.Size(225, 61);
             this.txtdesc.TabIndex = 15;
@@ -76,23 +76,24 @@
             this.GroupBox4.Controls.Add(this.Label11);
             this.GroupBox4.Controls.Add(this.txtSearch);
             this.GroupBox4.Controls.Add(this.dtgList);
+            this.GroupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBox4.Location = new System.Drawing.Point(11, 62);
             this.GroupBox4.Name = "GroupBox4";
             this.GroupBox4.Size = new System.Drawing.Size(507, 455);
             this.GroupBox4.TabIndex = 71;
             this.GroupBox4.TabStop = false;
-            this.GroupBox4.Text = "List of Subject";
+            this.GroupBox4.Text = "Список предметов";
             // 
             // Label11
             // 
             this.Label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label11.AutoSize = true;
-            this.Label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label11.Location = new System.Drawing.Point(7, 20);
             this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(61, 17);
+            this.Label11.Size = new System.Drawing.Size(60, 18);
             this.Label11.TabIndex = 65;
-            this.Label11.Text = "Search :";
+            this.Label11.Text = "Поиск :";
             // 
             // dtgList
             // 
@@ -116,9 +117,9 @@
             // txtSubject
             // 
             this.txtSubject.Enabled = false;
-            this.txtSubject.Location = new System.Drawing.Point(104, 32);
+            this.txtSubject.Location = new System.Drawing.Point(121, 32);
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(225, 20);
+            this.txtSubject.Size = new System.Drawing.Size(225, 24);
             this.txtSubject.TabIndex = 20;
             // 
             // Label13
@@ -126,25 +127,26 @@
             this.Label13.AutoSize = true;
             this.Label13.Location = new System.Drawing.Point(60, 128);
             this.Label13.Name = "Label13";
-            this.Label13.Size = new System.Drawing.Size(35, 13);
+            this.Label13.Size = new System.Drawing.Size(43, 18);
             this.Label13.TabIndex = 18;
-            this.Label13.Text = "Year :";
+            this.Label13.Text = "Год :";
+            this.Label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Label7
             // 
             this.Label7.AutoSize = true;
-            this.Label7.Location = new System.Drawing.Point(9, 61);
+            this.Label7.Location = new System.Drawing.Point(11, 61);
             this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(89, 13);
+            this.Label7.Size = new System.Drawing.Size(155, 18);
             this.Label7.TabIndex = 8;
-            this.Label7.Text = "Descriptive Title :";
+            this.Label7.Text = "Описание предмета :";
             // 
             // txtSemester
             // 
             this.txtSemester.Enabled = false;
             this.txtSemester.Location = new System.Drawing.Point(104, 151);
             this.txtSemester.Name = "txtSemester";
-            this.txtSemester.Size = new System.Drawing.Size(127, 20);
+            this.txtSemester.Size = new System.Drawing.Size(127, 24);
             this.txtSemester.TabIndex = 17;
             // 
             // Label14
@@ -152,16 +154,16 @@
             this.Label14.AutoSize = true;
             this.Label14.Location = new System.Drawing.Point(38, 154);
             this.Label14.Name = "Label14";
-            this.Label14.Size = new System.Drawing.Size(57, 13);
+            this.Label14.Size = new System.Drawing.Size(77, 18);
             this.Label14.TabIndex = 19;
-            this.Label14.Text = "Semester :";
+            this.Label14.Text = "Семестр :";
             // 
             // txtYear
             // 
             this.txtYear.Enabled = false;
             this.txtYear.Location = new System.Drawing.Point(104, 125);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(127, 20);
+            this.txtYear.Size = new System.Drawing.Size(127, 24);
             this.txtYear.TabIndex = 16;
             // 
             // GroupBox3
@@ -174,37 +176,37 @@
             this.GroupBox3.Controls.Add(this.Label14);
             this.GroupBox3.Controls.Add(this.txtYear);
             this.GroupBox3.Controls.Add(this.Label1);
+            this.GroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBox3.Location = new System.Drawing.Point(524, 62);
             this.GroupBox3.Name = "GroupBox3";
             this.GroupBox3.Size = new System.Drawing.Size(366, 189);
             this.GroupBox3.TabIndex = 70;
             this.GroupBox3.TabStop = false;
-            this.GroupBox3.Text = "Subject Details";
+            this.GroupBox3.Text = "Детали предмета";
             // 
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(32, 35);
+            this.Label1.Location = new System.Drawing.Point(11, 35);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(66, 13);
+            this.Label1.Size = new System.Drawing.Size(110, 18);
             this.Label1.TabIndex = 9;
-            this.Label1.Text = "Course No. :";
+            this.Label1.Text = "Номер курса. :";
             // 
             // Label15
             // 
             this.Label15.AutoSize = true;
-            this.Label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label15.Location = new System.Drawing.Point(8, 16);
             this.Label15.Name = "Label15";
-            this.Label15.Size = new System.Drawing.Size(341, 51);
+            this.Label15.Size = new System.Drawing.Size(143, 36);
             this.Label15.TabIndex = 59;
-            this.Label15.Text = "Input Course No. inside the box.\r\nAdd a comma(,) if more than  1 pre requisite. T" +
-    "ype it \r\ncorrectly. ex. it101,it102";
+            this.Label15.Text = "Ввод номера курса\r\n\r\n";
             // 
             // txtPreRequisite
             // 
             this.txtPreRequisite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPreRequisite.Location = new System.Drawing.Point(6, 70);
+            this.txtPreRequisite.Location = new System.Drawing.Point(6, 55);
             this.txtPreRequisite.Name = "txtPreRequisite";
             this.txtPreRequisite.Size = new System.Drawing.Size(354, 139);
             this.txtPreRequisite.TabIndex = 60;
@@ -216,45 +218,49 @@
             this.Label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label12.Location = new System.Drawing.Point(316, 8);
             this.Label12.Name = "Label12";
-            this.Label12.Size = new System.Drawing.Size(284, 51);
+            this.Label12.Size = new System.Drawing.Size(554, 51);
             this.Label12.TabIndex = 68;
-            this.Label12.Text = "Pre-Requisite";
+            this.Label12.Text = "Предварительные данные";
             // 
             // GroupBox2
             // 
             this.GroupBox2.Controls.Add(this.Label15);
             this.GroupBox2.Controls.Add(this.txtPreRequisite);
+            this.GroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBox2.Location = new System.Drawing.Point(524, 257);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Size = new System.Drawing.Size(366, 215);
             this.GroupBox2.TabIndex = 69;
             this.GroupBox2.TabStop = false;
-            this.GroupBox2.Text = "Pre-Requisite";
+            this.GroupBox2.Text = "Предварительные данные";
             // 
             // btnSave
             // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(710, 478);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(87, 27);
             this.btnSave.TabIndex = 66;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(805, 478);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(87, 27);
             this.btnClose.TabIndex = 67;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "Закрыть";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmPreRequisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 524);
+            this.ClientSize = new System.Drawing.Size(1019, 524);
             this.Controls.Add(this.GroupBox4);
             this.Controls.Add(this.GroupBox3);
             this.Controls.Add(this.Label12);

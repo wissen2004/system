@@ -46,11 +46,11 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(187, 153);
+            this.btnDelete.Location = new System.Drawing.Point(167, 153);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(67, 29);
+            this.btnDelete.Size = new System.Drawing.Size(76, 29);
             this.btnDelete.TabIndex = 38;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -76,43 +76,43 @@
             // Label3
             // 
             this.Label3.AutoSize = true;
-            this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label3.Location = new System.Drawing.Point(182, 210);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(65, 17);
+            this.Label3.Size = new System.Drawing.Size(64, 18);
             this.Label3.TabIndex = 35;
-            this.Label3.Text = "Search : ";
+            this.Label3.Text = "Поиск : ";
             // 
             // btnclose
             // 
             this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclose.Location = new System.Drawing.Point(333, 153);
+            this.btnclose.Location = new System.Drawing.Point(322, 153);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(67, 29);
             this.btnclose.TabIndex = 33;
-            this.btnclose.Text = "Close";
+            this.btnclose.Text = "Закрыть";
             this.btnclose.UseVisualStyleBackColor = true;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // btnnew
             // 
             this.btnnew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnew.Location = new System.Drawing.Point(260, 153);
+            this.btnnew.Location = new System.Drawing.Point(249, 153);
             this.btnnew.Name = "btnnew";
             this.btnnew.Size = new System.Drawing.Size(67, 29);
             this.btnnew.TabIndex = 34;
-            this.btnnew.Text = "New";
+            this.btnnew.Text = "Новый";
             this.btnnew.UseVisualStyleBackColor = true;
             this.btnnew.Click += new System.EventHandler(this.btnnew_Click);
             // 
             // btnsave
             // 
             this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsave.Location = new System.Drawing.Point(114, 153);
+            this.btnsave.Location = new System.Drawing.Point(73, 153);
             this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(67, 29);
+            this.btnsave.Size = new System.Drawing.Size(88, 29);
             this.btnsave.TabIndex = 32;
-            this.btnsave.Text = "Save";
+            this.btnsave.Text = "Сохранить";
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
@@ -145,12 +145,12 @@
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.Location = new System.Drawing.Point(31, 117);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(61, 17);
+            this.Label2.Size = new System.Drawing.Size(49, 18);
             this.Label2.TabIndex = 29;
-            this.Label2.Text = "Course :";
+            this.Label2.Text = "Курс :";
             // 
             // Label1
             // 
@@ -158,9 +158,9 @@
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(150, 9);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(127, 39);
+            this.Label1.Size = new System.Drawing.Size(93, 39);
             this.Label1.TabIndex = 28;
-            this.Label1.Text = "Course";
+            this.Label1.Text = "Курс";
             // 
             // frmCourse
             // 

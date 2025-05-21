@@ -46,7 +46,7 @@
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(94, 37);
             this.Cancel.TabIndex = 12;
-            this.Cancel.Text = "&Cancel";
+            this.Cancel.Text = "&Отменить";
             // 
             // OK
             // 
@@ -81,7 +81,7 @@
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(220, 23);
             this.PasswordLabel.TabIndex = 9;
-            this.PasswordLabel.Text = "&Password";
+            this.PasswordLabel.Text = "&Пароль";
             this.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // UsernameLabel
@@ -91,7 +91,7 @@
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(220, 23);
             this.UsernameLabel.TabIndex = 6;
-            this.UsernameLabel.Text = "&User name";
+            this.UsernameLabel.Text = "&Логин";
             this.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LogoPictureBox

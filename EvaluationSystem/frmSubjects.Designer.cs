@@ -38,7 +38,6 @@
             this.Label7 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dtgList = new System.Windows.Forms.DataGridView();
             this.txtDesc = new System.Windows.Forms.RichTextBox();
@@ -61,12 +60,12 @@
             // 
             this.Label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label11.AutoSize = true;
-            this.Label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label11.Location = new System.Drawing.Point(586, 245);
             this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(61, 17);
+            this.Label11.Size = new System.Drawing.Size(60, 18);
             this.Label11.TabIndex = 85;
-            this.Label11.Text = "Search :";
+            this.Label11.Text = "Поиск :";
             // 
             // txtSearch
             // 
@@ -84,26 +83,28 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 35);
             this.btnDelete.TabIndex = 83;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // cboSemester
             // 
             this.cboSemester.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSemester.FormattingEnabled = true;
             this.cboSemester.Items.AddRange(new object[] {
             "First",
             "Second"});
             this.cboSemester.Location = new System.Drawing.Point(576, 99);
             this.cboSemester.Name = "cboSemester";
-            this.cboSemester.Size = new System.Drawing.Size(211, 21);
+            this.cboSemester.Size = new System.Drawing.Size(211, 24);
             this.cboSemester.TabIndex = 82;
-            this.cboSemester.Text = "Select";
+            this.cboSemester.Text = "Выбрать";
             // 
             // cboYearLevel
             // 
             this.cboYearLevel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboYearLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboYearLevel.FormattingEnabled = true;
             this.cboYearLevel.Items.AddRange(new object[] {
             "First",
@@ -112,52 +113,53 @@
             "Fourth"});
             this.cboYearLevel.Location = new System.Drawing.Point(576, 70);
             this.cboYearLevel.Name = "cboYearLevel";
-            this.cboYearLevel.Size = new System.Drawing.Size(211, 21);
+            this.cboYearLevel.Size = new System.Drawing.Size(211, 24);
             this.cboYearLevel.TabIndex = 79;
-            this.cboYearLevel.Text = "Select";
+            this.cboYearLevel.Text = "Выбрать";
             // 
             // cboCourse
             // 
             this.cboCourse.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCourse.FormattingEnabled = true;
             this.cboCourse.Location = new System.Drawing.Point(576, 44);
             this.cboCourse.Name = "cboCourse";
-            this.cboCourse.Size = new System.Drawing.Size(211, 21);
+            this.cboCourse.Size = new System.Drawing.Size(211, 24);
             this.cboCourse.TabIndex = 78;
-            this.cboCourse.Text = "Select";
+            this.cboCourse.Text = "Выбрать";
             // 
             // Label8
             // 
             this.Label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Label8.AutoSize = true;
-            this.Label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label8.Location = new System.Drawing.Point(486, 71);
+            this.Label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label8.Location = new System.Drawing.Point(496, 71);
             this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(84, 17);
+            this.Label8.Size = new System.Drawing.Size(43, 18);
             this.Label8.TabIndex = 74;
-            this.Label8.Text = "Year Level :";
+            this.Label8.Text = "Год :";
             // 
             // Label7
             // 
             this.Label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Label7.AutoSize = true;
-            this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label7.Location = new System.Drawing.Point(494, 99);
             this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(76, 17);
+            this.Label7.Size = new System.Drawing.Size(77, 18);
             this.Label7.TabIndex = 73;
-            this.Label7.Text = "Semester :";
+            this.Label7.Text = "Семестр :";
             // 
             // Label6
             // 
             this.Label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Label6.AutoSize = true;
-            this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label6.Location = new System.Drawing.Point(509, 45);
+            this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label6.Location = new System.Drawing.Point(498, 45);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(61, 17);
+            this.Label6.Size = new System.Drawing.Size(49, 18);
             this.Label6.TabIndex = 75;
-            this.Label6.Text = "Course :";
+            this.Label6.Text = "Курс :";
             // 
             // btnClose
             // 
@@ -166,28 +168,18 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 35);
             this.btnClose.TabIndex = 72;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "Закрыть";
             this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // btnNew
-            // 
-            this.btnNew.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnNew.Location = new System.Drawing.Point(291, 214);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(75, 35);
-            this.btnNew.TabIndex = 71;
-            this.btnNew.Text = "Clear";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSave.Location = new System.Drawing.Point(210, 214);
+            this.btnSave.Location = new System.Drawing.Point(288, 214);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 35);
             this.btnSave.TabIndex = 70;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -226,7 +218,7 @@
             // 
             this.txtLecUnit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtLecUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLecUnit.Location = new System.Drawing.Point(210, 143);
+            this.txtLecUnit.Location = new System.Drawing.Point(251, 143);
             this.txtLecUnit.Name = "txtLecUnit";
             this.txtLecUnit.Size = new System.Drawing.Size(75, 23);
             this.txtLecUnit.TabIndex = 68;
@@ -235,7 +227,7 @@
             // 
             this.txtLabUnit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtLabUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLabUnit.Location = new System.Drawing.Point(210, 172);
+            this.txtLabUnit.Location = new System.Drawing.Point(251, 172);
             this.txtLabUnit.Name = "txtLabUnit";
             this.txtLabUnit.Size = new System.Drawing.Size(75, 23);
             this.txtLabUnit.TabIndex = 69;
@@ -244,45 +236,45 @@
             // 
             this.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Label5.AutoSize = true;
-            this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label5.Location = new System.Drawing.Point(111, 146);
+            this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label5.Location = new System.Drawing.Point(80, 146);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(93, 17);
+            this.Label5.Size = new System.Drawing.Size(116, 18);
             this.Label5.TabIndex = 61;
-            this.Label5.Text = "Lecture Unit :";
+            this.Label5.Text = "Номер лекции :";
             // 
             // Label3
             // 
             this.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Label3.AutoSize = true;
-            this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.Location = new System.Drawing.Point(87, 76);
+            this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label3.Location = new System.Drawing.Point(82, 76);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(117, 17);
+            this.Label3.Size = new System.Drawing.Size(83, 18);
             this.Label3.TabIndex = 60;
-            this.Label3.Text = "Descriptive Title :";
+            this.Label3.Text = "Название :";
             // 
             // Label4
             // 
             this.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Label4.AutoSize = true;
-            this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label4.Location = new System.Drawing.Point(131, 175);
+            this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label4.Location = new System.Drawing.Point(80, 175);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(73, 17);
+            this.Label4.Size = new System.Drawing.Size(169, 18);
             this.Label4.TabIndex = 63;
-            this.Label4.Text = "Lab. Unit :";
+            this.Label4.Text = "Номер Лабораторной :";
             // 
             // Label1
             // 
             this.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.Location = new System.Drawing.Point(117, 47);
+            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1.Location = new System.Drawing.Point(84, 47);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(87, 17);
+            this.Label1.Size = new System.Drawing.Size(106, 18);
             this.Label1.TabIndex = 62;
-            this.Label1.Text = "Course No .:";
+            this.Label1.Text = "Номер курса :";
             // 
             // txtSubject
             // 
@@ -368,7 +360,6 @@
             this.Controls.Add(this.Label7);
             this.Controls.Add(this.Label6);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dtgList);
             this.Controls.Add(this.txtDesc);
@@ -406,7 +397,6 @@
         internal System.Windows.Forms.Label Label7;
         internal System.Windows.Forms.Label Label6;
         internal System.Windows.Forms.Button btnClose;
-        internal System.Windows.Forms.Button btnNew;
         internal System.Windows.Forms.Button btnSave;
         internal System.Windows.Forms.DataGridView dtgList;
         internal System.Windows.Forms.RichTextBox txtDesc;

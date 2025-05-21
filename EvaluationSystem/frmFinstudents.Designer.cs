@@ -40,12 +40,12 @@
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.Location = new System.Drawing.Point(509, 78);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(61, 17);
+            this.Label2.Size = new System.Drawing.Size(60, 18);
             this.Label2.TabIndex = 16;
-            this.Label2.Text = "Search :";
+            this.Label2.Text = "Поиск :";
             // 
             // TextBox1
             // 
@@ -62,17 +62,17 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(93, 31);
             this.btnClose.TabIndex = 13;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "Закрыть";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAddGrades
             // 
-            this.btnAddGrades.Location = new System.Drawing.Point(650, 461);
+            this.btnAddGrades.Location = new System.Drawing.Point(594, 461);
             this.btnAddGrades.Name = "btnAddGrades";
-            this.btnAddGrades.Size = new System.Drawing.Size(131, 31);
+            this.btnAddGrades.Size = new System.Drawing.Size(179, 31);
             this.btnAddGrades.TabIndex = 14;
-            this.btnAddGrades.Text = "Print Curriculum";
+            this.btnAddGrades.Text = "Распечатать транскрипт";
             this.btnAddGrades.UseVisualStyleBackColor = true;
             this.btnAddGrades.Click += new System.EventHandler(this.btnAddGrades_Click);
             // 
@@ -82,9 +82,9 @@
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(13, 11);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(335, 40);
+            this.Label1.Size = new System.Drawing.Size(278, 40);
             this.Label1.TabIndex = 12;
-            this.Label1.Text = "Search for Students";
+            this.Label1.Text = "Поиск студента";
             // 
             // dtgList
             // 

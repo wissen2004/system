@@ -24,8 +24,7 @@ namespace EvaluationSystem
             tsGrades.Enabled = true;
             tsSubject.Enabled = true;
             tsUsers.Enabled = true;
-            tsReports.Enabled = false;
-            tsFindstudent.Enabled = false;
+            tsFindstudent.Enabled = true;
             tsPreRequisite.Enabled = true;
             tsLogin.Image = Properties.Resources.log_close;
         }
@@ -38,7 +37,6 @@ namespace EvaluationSystem
             tsGrades.Enabled = false;
             tsSubject.Enabled = false;
             tsUsers.Enabled = false;
-            tsReports.Enabled = false;
             tsFindstudent.Enabled = false;
             tsPreRequisite.Enabled = false;
             tsLogin.Image = Properties.Resources.log_open;

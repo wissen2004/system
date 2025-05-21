@@ -141,25 +141,37 @@ namespace EvaluationSystem
 
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnNew_Click(object sender, EventArgs e)
         {
             UF.clearTxt(this);
 
-            sql = "SELECT * FROM `tblauto` WHERE  `id`=1";
+            sql = "SELECT * FROM `tblauto` WHERE `id`=1";
             SC.singleResult(sql);
-            txtSubjectId.Text = SC.dt.Rows[0].Field<string>(1) + SC.dt.Rows[0].Field<int>(2);
+            if (SC.dt.Rows.Count > 0)
+            {
+                txtSubjectId.Text = SC.dt.Rows[0].Field<int>("autoend").ToString(); // Convert autoend (INT) to string
+            }
+            else
+            {
+                txtSubjectId.Text = "1000"; // Fallback value if no records exist
+            }
 
-            sql = "SELECT SubjectId, `Subject` as 'CourseNo.', `DescriptiveTitle`, `LecUnit`, `LabUnit`,Course,`YearLevel`, `Semester`,   `PreRequisite` FROM `tblsubject` s,tblcourse c WHERE s.CourseId=c.CourseId";
+            sql = "SELECT SubjectId, `Subject` as 'CourseNo.', `DescriptiveTitle`, `LecUnit`, `LabUnit`, Course, `YearLevel`, `Semester`, `PreRequisite` FROM `tblsubject` s, tblcourse c WHERE s.CourseId = c.CourseId";
             SC.Load_DTG(sql, dtgList);
             dtgList.Columns[0].Visible = false;
-            sql = "Select CourseId,Course From tblcourse";
+
+            sql = "SELECT CourseId, Course FROM tblcourse";
             SC.fiil_CBO(sql, cboCourse);
             cboCourse.Text = "Select";
 
-            sql = "Select SubjectId,Subject From tblsubject";
+            sql = "SELECT SubjectId, Subject FROM tblsubject";
             SC.fiil_CBO(sql, cboPrerequisite);
             cboPrerequisite.Text = "None";
-
 
             cbosy.Text = "Select";
             cboSemester.Text = "Select";
